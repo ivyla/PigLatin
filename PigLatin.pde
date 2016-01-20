@@ -18,6 +18,12 @@ public int findFirstVowel(String sWord)
   for (int i = 0; i < sWord.length ()-1; i++) {
 
     String locate = new String(sWord.substring(i, i+1));
+    
+    if(sWord.charAt(i) == 'a' || sWord.charAt(i) == 'e' || sWord.charAt(i) == 'i' || sWord.charAt(i) == 'o' || sWord.charAt(i) == 'u'){
+    
+      return i; 
+    
+    }
   }
   return -1;
 }
@@ -36,22 +42,12 @@ public String pigLatin(String sWord)
     if (findFirstVowel(sWord) == -1)
     {
       return sWord + "ay";
-    } else if //case two
-      //(sWord.substring(0,1).equals("a") || sWord.substring(0,1).equals("e") || sWord.substring(0,1).equals("i") || sWord.substring(0,1).equals("o") || sWord.substring(0,1).equals("u")) 
-      (findFirstVowel(sWord){
       
+    } else if //case two 
+      (sWord.substring(0,1).charAt(0) == 'e'){
+      return sWord + "quay";
       
       }
-      {
-
-        return sWord + "way";
-        
-        // vvv case three 
-      } else if(sWord.substring(0,2).equals("qu")){
-      
-        return postQu + qu;
-      
-      } //case four VVVv
     else {
       return "-1";
       }
