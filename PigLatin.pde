@@ -44,16 +44,20 @@ public String pigLatin(String sWord)
       return sWord + "ay";
       
     } else if //case two 
-      (sWord.substring(0,1).charAt(0) == 'e'){
-      return sWord + "quay";
+      (findFirstVowel(sWord) == 0){
+      return sWord + "way";
       
       }
-    else {
-      return "-1";
+    else if(sWord.charAt(0) == 'q' && sWord.charAt(1) == 'u'){
+      
+      return sWord.substring(2) + "quay";
+    
+    } else if (findFirstVowel(sWord) > 0){
+      return sWord.substring(findFirstVowel(sWord)) + sWord.substring(0, findFirstVowel(sWord)) + "ay";
       }
     }
     return "-1";
   }
-//  return "-1";
+
 
 
